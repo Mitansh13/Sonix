@@ -33,21 +33,21 @@ export const metadata = {
   authors: [{ name: "Sonix" }],
   creator: "Sonix",
   publisher: "Sonix",
-  metadataBase: new URL("https://so-nix.com"),
+  metadataBase: new URL("https://so-nix.me"),
   alternates: {
-    canonical: "https://so-nix.com",
+    canonical: "https://so-nix.me",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://so-nix.com",
+    url: "https://so-nix.me",
     siteName: "Sonix",
     title: "Sonix | Free Private Audio Converter (MP3, WAV, FLAC, OGG)",
     description:
       "Convert audio files safely and instantly in your browser. Sonix uses local WebAssembly processing so your files never upload to a server. 100% private, secure, and free.",
     images: [
       {
-        url: "https://so-nix.com/og-image.png",
+        url: "https://so-nix.me/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sonix Audio Converter - Free & Private",
@@ -59,7 +59,7 @@ export const metadata = {
     title: "Sonix | Free Private Audio Converter (MP3, WAV, FLAC, OGG)",
     description:
       "Convert audio files safely and instantly in your browser. Sonix uses local WebAssembly processing so your files never upload to a server. 100% private, secure, and free.",
-    images: ["https://so-nix.com/og-image.png"],
+    images: ["https://so-nix.me/og-image.png"],
     creator: "@sonixaudio",
   },
   robots: {

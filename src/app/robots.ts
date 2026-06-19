@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://so-nix.com/sitemap.xml",
+    sitemap: "https://so-nix.me/sitemap.xml",
   };
 }
