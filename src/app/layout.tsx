@@ -4,6 +4,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import CookieBanner from "@/components/CookieBanner";
 
+import { Analytics } from "@vercel/analytics/react";
+
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jakarta",
@@ -125,6 +127,7 @@ export default function RootLayout({
           </div>
         </footer>
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );
