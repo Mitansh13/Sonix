@@ -2,6 +2,12 @@
 
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    adsbygoogle: unknown[];
+  }
+}
+
 interface AdBannerProps {
   slot: string;
   format?: "horizontal" | "vertical" | "rectangular" | "auto";
