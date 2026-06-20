@@ -1,13 +1,12 @@
 import AudioConverter from "@/components/AudioConverter";
+import AdBanner from "@/components/AdBanner";
 import { CheckCircle, Bolt, Shield, Zap, FileAudio, Lock } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center px-4 py-8 min-h-screen">
       {/* Top Ad Slot */}
-      <div className="w-full max-w-[728px] h-[90px] bg-slate-100 rounded-xl flex items-center justify-center text-xs text-slate-400 border border-slate-200/50 mb-8 shadow-inner">
-        <span className="opacity-60 font-medium tracking-wider uppercase">Advertisement</span>
-      </div>
+      <AdBanner slot="REPLACE_WITH_TOP_AD_SLOT" format="horizontal" style={{ display: "block", textAlign: "center", width: "728px", height: "90px" }} />
 
       <div className="flex flex-col lg:flex-row w-full max-w-7xl gap-8">
         {/* Main Content */}
@@ -115,8 +114,8 @@ export default function Home() {
 
         {/* Sidebar Ad Slot */}
         <aside className="hidden lg:block lg:w-[30%]">
-          <div className="sticky top-24 mx-auto w-full max-w-[300px] h-[600px] bg-slate-100 rounded-xl flex items-center justify-center text-xs text-slate-400 border border-slate-200/50 shadow-inner">
-            <span className="opacity-60 font-medium tracking-wider uppercase">Advertisement</span>
+          <div className="sticky top-24 mx-auto" style={{ width: "300px", height: "600px" }}>
+            <AdBanner slot="REPLACE_WITH_SIDEBAR_AD_SLOT" format="vertical" style={{ display: "block", width: "300px", height: "600px" }} />
           </div>
         </aside>
       </div>
