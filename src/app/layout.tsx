@@ -91,7 +91,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakarta.variable} h-full antialiased`}>
       <head>
-        {/* Google AdSense - Replace ca-pub-PLACEHOLDER with your actual publisher ID */}
+        {/* Google AdSense */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7636187486912431"
