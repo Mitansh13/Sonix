@@ -1,0 +1,2 @@
+# Vercel Deployment Trigger
+Last deployment attempt: June 19, 2026
