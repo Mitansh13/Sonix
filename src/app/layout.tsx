@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import CookieBanner from "@/components/CookieBanner";
-
 import { Analytics } from "@vercel/analytics/react";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -90,16 +89,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${jakarta.variable} h-full antialiased`}>
-      <head>
+      <head />
+      <body className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900 relative">
         {/* Google AdSense */}
         <Script
-          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7636187486912431"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-      </head>
-      <body className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900 relative">
         {/* Floating glass navbar */}
         <header className="sticky top-4 z-50 mx-4 rounded-full bg-white/70 backdrop-blur-xl border border-white/50 shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex items-center justify-between px-5 sm:px-8 py-4 max-w-6xl lg:mx-auto">
           <Link href="/" className="flex items-center gap-2">
