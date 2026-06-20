@@ -26,19 +26,38 @@ export default function AudioConverter() {
   const ffmpegRef = useRef<FFmpeg | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const outputUrlRef = useRef<string | null>(null);
+
+  // Keep outputUrlRef in sync
+  useEffect(() => {
+    outputUrlRef.current = outputUrl;
+  }, [outputUrl]);
+
   // Load FFmpeg on mount
   useEffect(() => {
     const load = async () => {
       const ffmpeg = new FFmpeg();
       ffmpegRef.current = ffmpeg;
-      await ffmpeg.load();
-      setReady(true);
+
+      ffmpeg.on("log", ({ message }) => {
+        console.log("[FFmpeg]", message);
+      });
+
+      try {
+        await ffmpeg.load({
+          coreURL: "https://unpkg.com/@ffmpeg/core@0.12.6/dist/esm/ffmpeg-core.js",
+          wasmURL: "https://unpkg.com/@ffmpeg/core@0.12.6/dist/esm/ffmpeg-core.wasm",
+        });
+        setReady(true);
+      } catch (err) {
+        console.error("FFmpeg failed to load:", err);
+      }
     };
     load();
     return () => {
-      if (outputUrl) URL.revokeObjectURL(outputUrl);
+      if (outputUrlRef.current) URL.revokeObjectURL(outputUrlRef.current);
     };
-  }, [outputUrl]);
+  }, []);
 
   // 3D Tilt Effect logic
   const handleMouseMove = useCallback(
